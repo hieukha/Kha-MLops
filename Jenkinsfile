@@ -57,7 +57,7 @@ pipeline {
                         docker build -t api .
 
                         echo "Running the Docker container..."
-                        docker run --name api_running -p 80:80 -d api
+                        docker run --name api_running -p 2025:2025 -d api
                         '''
 
                         withChecks('Run FastAPI App') {
@@ -80,7 +80,7 @@ pipeline {
                     try {
                         sh '''
                         # Run tests
-                        pytest --junitxml=test-results.xml
+                        python3 -m pytest test_main.py
                         '''
                         withChecks('Run Tests') {
                             publishChecks name: 'Run Tests', status: 'COMPLETED', conclusion: 'SUCCESS',
