@@ -6,9 +6,9 @@ WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 COPY . /app
-
+# test
 # Set environment variable for the port
-ENV PORT 2025
+ENV PORT 2025 
 
 # Expose the port to the outside world
 EXPOSE 2025
