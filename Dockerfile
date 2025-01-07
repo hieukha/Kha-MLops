@@ -9,7 +9,7 @@ COPY . /app
 
 # Set environment variable for the port
 ENV PORT 2025 
-#test
+
 # Expose the port to the outside world
 EXPOSE 2025
 #test
